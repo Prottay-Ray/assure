@@ -72,31 +72,20 @@ async function post_claim_data() {
         body: JSON.stringify({
             type: null,
             aadharNumber: claim.aadharNo,
-            nameOfMember: claim.name,
             hospitalName: claim.hospital,
             dateOfTreatment: new Date(),
-            submissionDate: new Date(),
-            status: null,
             claimItem: null,
             amountToClaim: null,
             preauthorizedConfirmation: true,
-            followUpVisits: false
+            documents:[],
+            followUpVisits: false,
+            member:null,
+            user:null,
+            policyBookings:null
         }),
         headers: { "Content-Type": "application/json" }
     });
 
-/*   private String type;
-    private Long aadharNumber;
-    private String nameOfMember;
 
-    private String hospitalName;
-
-    private Date dateOfTreatment;
-    private Date submissionDate;
-    private String status;
-    private String claimItem;
-    private Float amountToClaim;
-    private Boolean preauthorizedConfirmation;
-    private Boolean followUpVisits; */
 
 }
