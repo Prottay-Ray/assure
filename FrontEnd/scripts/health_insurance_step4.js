@@ -3,7 +3,6 @@ let input_medi_1 = document.getElementById("input_medi_1");
 let input_medi_2 = document.getElementById("input_medi_2");
 
 
-let allDetails = JSON.stringify(localStorage.getItem("allDetails"));
 
 input_medi_1.addEventListener('click', () =>{
     let user_d = JSON.parse(localStorage.getItem("userDetails"));
@@ -18,7 +17,7 @@ input_medi_1.addEventListener('click', () =>{
 
     localStorage.setItem("userDetails", JSON.stringify(user_d));
 
-    allDetails[0].is_taking_medicines = input_medi_1;
+    localStorage.setItem("medicine", JSON.stringify(true));
 })
 
 input_medi_2.addEventListener('click', () =>{
@@ -34,10 +33,9 @@ input_medi_2.addEventListener('click', () =>{
 
     localStorage.setItem("userDetails", JSON.stringify(user_d));
 
-    allDetails[0].is_taking_medicines = input_medi_2;
+    localStorage.setItem("medicine", JSON.stringify(false));
 })
 
 // document.getElementById("btn_4").addEventListener('click', () =>{
-//localStorage.setItem("allDetails", JSON.stringify(allDetails)); //Add this too when implement next page.REQUIRED!!
 //     window.location = "health_insurance_step4.html"
 // }

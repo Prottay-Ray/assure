@@ -211,11 +211,11 @@
         <div>Relation with you</div>
         <div>
             <select name="relation" id="relation">
-                    <option value="mother">Mother</option>
-                    <option value="father">Father</option>
-                    <option value="son">Son</option>
-                    <option value="daughter">Daughter</option>
-                    <option value="spouse">Spouse</option>
+                <option value="spouse">Spouse</option>
+                <option value="mother">Mother</option>
+                <option value="father">Father</option>
+                <option value="son">Son</option>
+                <option value="daughter">Daughter</option>    
             </select>
         </div>
     </div>
@@ -241,10 +241,6 @@
         </div>
     </div>
     <div class="entry">
-        <div>City</div>
-        <div><input type="text" id="city"></div>
-    </div>
-    <div class="entry">
         <div>Email</div>
         <div><input type="email" id="email"></div>
     </div>
@@ -259,7 +255,7 @@
         <div>
             <select name="medicine" id="medicine">
                     <option value="true">Yes</option>
-                    <option value="false">False</option>
+                    <option value="false">No</option>
             </select>
         </div>
     </div>
@@ -296,7 +292,7 @@
             "dob" : document.getElementById("DOB").value,
             "gender" : document.getElementById("gender").value,
             "is_taking_medicines" : document.getElementById("medicine").value,
-            "city" : allDetails[0].city,
+            "city" : JSON.parse(localStorage.getItem("city")),
             "martial_status" : document.getElementById("married").value,
             "email" : document.getElementById("email").value,
             "aadhaar" : document.getElementById("aadhar").value,
