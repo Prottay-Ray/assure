@@ -5,7 +5,13 @@ document.querySelector('form').addEventListener('submit', (e) => {
     
     // console.log(JSON.stringify(Object.fromEntries(formData)));
     // console.log(Object.fromEntries(formData));
-    addToTreatmentDocumentDetails(Object.fromEntries(formData));
+    
+    if(document.activeElement.classList.value=="next"){
+        addToTreatmentDocumentDetails(Object.fromEntries(formData));
+    }
+    else{
+        window.location = "./directClaim1.html";
+    }
 });
 if(localStorage.getItem("treatmentDocuments")==null){
     localStorage.setItem("treatmentDocuments", JSON.stringify([]));

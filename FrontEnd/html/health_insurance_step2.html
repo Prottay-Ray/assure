@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Health Insurance - Assure</title>
+    <link rel="stylesheet" href="..\css\health_insurance_step2.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Palanquin:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="../icons/site_logo.svg" type="image/x-icon">
+</head>
+<body>
+    <div class="main_container">
+        <div id="hospital_top_bar" class="backgroung_color_1 position">
+            <a href="./health_insurance_step1.html"><img src="..\icons\back.svg" id="back_btn" alt=""></a>
+            <span id="health_header" class="font_color_2 position font_family font_style">Health Insurance</span>
+        </div>
+        <div id="step_2">
+
+            <div id="btn_2" class="b">
+                <span class="cont">Continue</span>
+            </div>
+            <span class="policy">
+                By clicking on “continue”, you agree to our <span class="pri">Privacy Policy & Terms of Use</span> 
+            </span>
+        </div>
+        
+    </div>
+</body>
+<script src="..\scripts\health_insurance_step2.js"></script>
+</html>
+<script type="module">
+    import {bottomNavbar, loadNavbar} from "../components/bottomNavbar.js";
+    let div = document.createElement('div');
+    div.innerHTML = bottomNavbar();
+    div.style.marginTop = "740px";
+    document.getElementById('step_2').appendChild(div);
+
+    loadNavbar();
+</script>

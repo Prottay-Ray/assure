@@ -11,10 +11,10 @@ button {
 }
 #main {
     width: 375px;
-    height: 812px;
+    /* height: 812px; */
     font-family: Palanquin;
     font-style: normal;
-    background: rgba(255, 255, 255, 0.9);
+    background: rgba(255, 255, 255);
     border-radius: 20px;
 }
 #topBox {
@@ -146,7 +146,7 @@ button {
     display: flex;
     justify-content: space-evenly;
     width: 100%;
-    margin-top: 160px;
+    margin-top: 60px;
 }
 #exploreClaim > button {
     border-radius: 10px;
@@ -166,7 +166,7 @@ button {
     height: 126px;
     left: 16px;
     /* top: 644px; */
-    margin-top: 80px;
+    margin-top: 60px;
     background: linear-gradient(90deg, #C5EBEF 14.29%, rgba(6, 48, 53, 0) 100%), url("../images/close-up-stethoscope.jpg") no-repeat;
     background-size: cover;
     background-position: center;

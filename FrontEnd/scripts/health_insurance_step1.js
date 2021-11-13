@@ -6,13 +6,9 @@ let daughter_div = document.getElementById("daughter");
 let father_div = document.getElementById("father");
 let mother_div = document.getElementById("mother");
 
-if(localStorage.getItem("members") == null){
-    localStorage.setItem("members",JSON.stringify({}));
-}
+localStorage.setItem("members",JSON.stringify({}));
 
-if(localStorage.getItem("memberCount") == null){
-    localStorage.setItem("memberCount",JSON.stringify(0));
-}
+localStorage.setItem("memberCount",JSON.stringify(0));
 
 self_div.addEventListener('click', () =>{
     let mem = JSON.parse(localStorage.getItem("members"));
@@ -176,6 +172,19 @@ mother_div.addEventListener('click', () =>{
         localStorage.setItem("memberCount",JSON.stringify(memCount));
     }
 })
+
+
+document.getElementById("btn_1").addEventListener('click', () =>{
+    let mem = JSON.parse(localStorage.getItem("members"));
+
+    if(Object.keys(mem).length === 0){
+        document.getElementById("atleast").style.visibility = "visible";
+    }
+    else{   
+        window.location = "health_insurance_step2.html"
+    }
+})
+
 
 
 

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/catalog.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Palanquin:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="../icons/site_logo.svg" type="image/x-icon">
+    <title>Best Health Insurances at the cheapest rates. - Assure</title>
+</head>
+<body>
+    <div id="main">
+        <div id="topBox">
+            <img src="../icons/back.svg" alt="" id="back">
+            <p id="prof">
+                Plans for you
+            </p>
+        </div>
+        <div id="profile_body">
+            <div id="menu">
+                <div id="coverMenu" class="opt">
+                    Cover
+                </div>
+                <div id="filterMenu" class="opt">
+                    Filter
+                </div>
+                <div id="sortMenu" class="opt">
+                    Sort
+                </div>
+            </div>
+            <div id="bookings"></div>
+            <div id="coverMenuDiv">
+                <p>Cover</p>
+                <button>2 Lakh to 5 Lakh</button> <br>
+                <button>6 Lakh to 10 Lakh</button><br>
+                <button>11 Lakh to 15 Lakh</button><br>
+                <button>More than 15 Lakh</button><br>
+            </div>
+        </div>
+        
+    </div>
+</body>
+</html>
+<script src="./../scripts/catalog.js"></script>
+<script type="module">
+    import {bottomNavbar, loadNavbar} from "../components/bottomNavbar.js";
+    let div = document.createElement('div');
+    div.innerHTML = bottomNavbar();
+    div.style.marginTop = "670px";
+    document.getElementById('main').appendChild(div);
+
+    loadNavbar();
+</script>
