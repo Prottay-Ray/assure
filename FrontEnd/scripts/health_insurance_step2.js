@@ -135,26 +135,6 @@ document.getElementById("btn_2").addEventListener('click', () =>{
         Object.assign(mem,{"ageOfMother" : mother_d.value});
         localStorage.setItem("members",JSON.stringify(mem));
     }
-    
-    let temp = localStorage.getItem("members");
-
-    console.log(temp);
-
-    fetch("http://localhost:8070/explore/policies", {
-        method:"POST",
-        body: temp,
-        mode: 'cors',
-        headers:{
-            "Content-Type":"application/json; charset=UTF-8"
-        },
-    })
-    .then((res) =>{
-        return res.json();
-    })
-    .then((data) =>{
-        console.log(data);
-        localStorage.setItem("policyList",JSON.stringify(data));
-    })
 
     window.location = "health_insurance_step3.html"
 })
