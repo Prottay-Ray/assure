@@ -153,5 +153,5 @@ document.getElementById("btn_2").addEventListener('click', () =>{
         localStorage.setItem("policyList",JSON.stringify(data));
     })
 
-    // window.location = "health_insurance_step2.html"
+    window.location = "health_insurance_step3.html"
 })

@@ -45,15 +45,6 @@
     border: 1px solid #7B7E84;
     box-sizing: border-box;
     border-radius: 8px;
-    width: 343px;
-    height: 40px;
-    left: 16px;
-    padding-left: 20px;
-}
-
-.input_box:focus{
-    outline: none;
-    border-color: #118592;
 }
 
 .input_text{
@@ -63,7 +54,6 @@
     font-size: 16px;
     line-height: 20px;
     color: #063035;
-    left: 16px;
 }
 
 /* specific properties */
@@ -112,6 +102,42 @@ body{
     font-size: 16px;
     line-height: 29px;
     text-align: center;
+}
+
+/*live*/
+
+#medi{
+    position: absolute;
+    width: 403px;
+    height: 20px;
+    left: 16px;
+    top: 96px;
+}
+
+#input_medi_1{
+    position: absolute;
+    width: 343px;
+    height: 40px;
+    left: 16px;
+    top: 132px;
+    padding: 20px;
+}
+
+#input_medi_2{
+    position: absolute;
+    width: 343px;
+    height: 40px;
+    left: 16px;
+    top: 192px;
+    padding: 20px;
+}
+
+.yes_no{
+    position: absolute;
+    width: 22px;
+    height: 25px;
+    left: 31px;
+    top: 7px;
 }
 
 /* btn */
