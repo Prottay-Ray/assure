@@ -291,7 +291,7 @@
             }
             allDetails.push(person);
             window.localStorage.setItem("allDetails", JSON.stringify(allDetails));
-            //localStorage.setItem("memberCount", JSON.stringify(2));
+            localStorage.setItem("memberCount", JSON.stringify(2));
             let memberCount = JSON.parse(window.localStorage.getItem("memberCount"));
             console.log(memberCount);
             if(memberCount!==0){
