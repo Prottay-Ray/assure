@@ -271,11 +271,11 @@
             </div>
             <div>
                 <select name="Amount" id="amount" onclick="calculatePremium()">
-                    <option value="5">Rs. 5 lakh</option>
+                    <!-- <option value="5">Rs. 5 lakh</option>
                     <option value="5.5">Rs. 5.5 lakh</option>
                     <option value="6">Rs. 6 lakh</option>
                     <option value="6.5">Rs. 6.5 lakh</option>
-                    <option value="7">Rs. 7 lakh</option>                    
+                    <option value="7">Rs. 7 lakh</option>                     -->
                 </select>
             </div>
         </div>
@@ -292,9 +292,9 @@
             </div>
             <div>
                 <select name="year" id="year" onclick="calculatePremium()">
-                    <option value="1">1 Year</option>
+                    <!-- <option value="1">1 Year</option>
                     <option value="2">2 Year</option>
-                    <option value="3">3 Year</option>
+                    <option value="3">3 Year</option> -->
                 </select>
             </div>
         </div>
@@ -319,6 +319,75 @@
         console.log(year, amount);
     }
     function nextPage(){
+        continueButton();
         window.location.href = "./self_details.html";
     }
+
+    let policy = JSON.parse(localStorage.getItem("PolicySelected"));
+    let year = document.getElementById('year');
+    let amount = document.getElementById('amount');
+    let finalAmount = document.getElementById('finalPremium');
+    let premiumChosen = 0;
+
+    function continueButton() {
+        let a = {
+            tenure: year.value,
+            cover: amount.value,
+            premium: premiumChosen
+        }
+        localStorage.setItem("ChosenTA", JSON.stringify(a));
+    }
+
+    amount.onchange = () => {
+        if (amount.value === policy.coverAmount1) {
+            finalAmount.innerText = `Rs. ${policy.premium1}/-`;
+            premiumChosen = policy.premium1;
+            return;
+        }
+        if (amount.value === policy.coverAmount2) {
+            finalAmount.innerText = `Rs. ${policy.premium2}/-`;
+            premiumChosen = policy.premium2;
+            return;
+        }
+        if (amount.value === policy.coverAmount3) {
+            finalAmount.innerText = `Rs. ${policy.premium3}/-`;
+            premiumChosen = policy.premium3;
+            return;
+        }
+    }
+
+
+    function loadActivity() {
+        policyName1.
+        let a = document.createElement('option');
+        a.value = policy.tenure1 + " years.";
+        a.text = policy.tenure1 + " years.";
+        year.appendChild(a);
+        a = document.createElement('option');
+        a.value = policy.tenure2 + " years.";
+        a.text = policy.tenure2 + " years.";
+        year.appendChild(a);
+        a = document.createElement('option');
+        a.value = policy.tenure3 + " years.";
+        a.text = policy.tenure3 + " years.";
+        year.appendChild(a);
+        a = document.createElement('option');
+        a.setAttribute('id', '1');
+        a.value = "Rs. " + policy.coverAmount1;
+        a.text = "Rs. " + policy.coverAmount1;
+        amount.appendChild(a);
+        a = document.createElement('option');
+        a.setAttribute('id', '2');
+        a.value = "Rs. " + policy.coverAmount2;
+        a.text = "Rs. " + policy.coverAmount2;
+        amount.appendChild(a);
+        a = document.createElement('option');
+        a.setAttribute('id', '3');
+        a.value = "Rs. " + policy.coverAmount3;
+        a.text = "Rs. " + policy.coverAmount3;
+        amount.appendChild(a);
+    }
+
+    loadActivity();
+
 </script>
