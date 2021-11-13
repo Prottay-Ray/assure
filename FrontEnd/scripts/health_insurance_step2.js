@@ -150,6 +150,8 @@ document.getElementById("btn_2").addEventListener('click', () =>{
     
     let temp = localStorage.getItem("members");
 
+    console.log(temp);
+
     fetch("http://localhost:8070/explore/policies", {
         method:"POST",
         body: temp,
@@ -162,6 +164,7 @@ document.getElementById("btn_2").addEventListener('click', () =>{
         return res.json();
     })
     .then((data) =>{
+        console.log(data);
         localStorage.setItem("policyList",JSON.stringify(data));
     })
 
