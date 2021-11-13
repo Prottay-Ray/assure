@@ -15,7 +15,7 @@ let exploreButt = document.getElementById('explore');
 let claimButt = document.getElementById('claim')
 
 exploreButt.onclick = () => {
-    window.location = "./health_insurance.html";
+    window.location = "./Explore2.html";
 }
 claimButt.onclick = () => {
     window.location = "./directClaim.html";

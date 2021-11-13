@@ -37,5 +37,5 @@ input_medi_2.addEventListener('click', () =>{
 })
 
 document.getElementById("btn_4").addEventListener('click', () =>{
-    window.location = "catalog.html"
+    window.location = "catalog.htm"
 });
