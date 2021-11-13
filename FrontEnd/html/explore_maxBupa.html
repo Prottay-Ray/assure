@@ -243,7 +243,7 @@
         <div>
            <div id="backButton"><</div>
         </div>
-        <div id="policyName">Max Bupa</div>
+        <div id="policyName">Details</div>
     </div>
 
     <div id="middle">
@@ -327,7 +327,7 @@
     let year = document.getElementById('year');
     let amount = document.getElementById('amount');
     let finalAmount = document.getElementById('finalPremium');
-    let premiumChosen = 0;
+    var premiumChosen = 0;
 
     function continueButton() {
         let a = {
@@ -338,18 +338,20 @@
         localStorage.setItem("ChosenTA", JSON.stringify(a));
     }
 
-    amount.onchange = () => {
-        if (amount.value === policy.coverAmount1) {
+    amount.onselectchange = () => {
+        // finalAmount.innerText = "Rs. " + 50000;
+        // return;
+        if (amount.value === "Rs. " + policy.coverAmount1) {
             finalAmount.innerText = `Rs. ${policy.premium1}/-`;
             premiumChosen = policy.premium1;
             return;
         }
-        if (amount.value === policy.coverAmount2) {
+        if (amount.value === "Rs. " + policy.coverAmount2) {
             finalAmount.innerText = `Rs. ${policy.premium2}/-`;
             premiumChosen = policy.premium2;
             return;
         }
-        if (amount.value === policy.coverAmount3) {
+        if (amount.value === "Rs. " + policy.coverAmount3) {
             finalAmount.innerText = `Rs. ${policy.premium3}/-`;
             premiumChosen = policy.premium3;
             return;
@@ -358,7 +360,7 @@
 
 
     function loadActivity() {
-        policyName1.
+        document.getElementById('policyName1').innerText = policy.policyName;
         let a = document.createElement('option');
         a.value = policy.tenure1 + " years.";
         a.text = policy.tenure1 + " years.";
@@ -375,6 +377,10 @@
         a.setAttribute('id', '1');
         a.value = "Rs. " + policy.coverAmount1;
         a.text = "Rs. " + policy.coverAmount1;
+        // a.onclick = () => {
+        //     finalAmount.innerText = `Rs. ${policy.premium1}/-`;
+        //     premiumChosen = policy.premium1;
+        // }
         amount.appendChild(a);
         a = document.createElement('option');
         a.setAttribute('id', '2');
