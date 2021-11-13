@@ -5,7 +5,12 @@ document.querySelector('form').addEventListener('submit', (e) => {
     
     // console.log(JSON.stringify(Object.fromEntries(formData)));
     // console.log(Object.fromEntries(formData));
-    addToTreatmentDetails(Object.fromEntries(formData));
+    if(document.activeElement.classList.value=="next"){
+        addToTreatmentDetails(Object.fromEntries(formData));
+    }
+    else{
+        window.location = "./directClaim.html";
+    }
 });
 
 if(localStorage.getItem("treatmentDetails")==null){
@@ -19,3 +24,4 @@ function addToTreatmentDetails(p){
 
     window.location = "./directClaim2.html";
 }
+

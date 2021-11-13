@@ -233,7 +233,7 @@ button {
     text-align: center;
     border: 5px solid #60d1dd;
     padding-top: 15px;
-    /* display: none; */
+    display: none;
 }
 #coverMenuDiv > button {
     width: 260px;
