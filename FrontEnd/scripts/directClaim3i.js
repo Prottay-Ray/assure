@@ -7,15 +7,22 @@ let checkBtn = document.getElementById('agreeCheck');
 document.querySelector('form').addEventListener('submit', (e) => {
     e.preventDefault();
     const formData = new FormData(e.target);
-    console.log(formData.get('checkbox'));
-   if(checkBtn.checked){
-        visibleSection.style.display = "none";
-        processingSection.style.display = "block";
-        setTimeout(() => {
-            processingSection.style.display = "none";
-            doneSection.style.display = "block";
-        }, 2000);
-   }
+
+    if(document.activeElement.classList.value=="next"){
+        if(checkBtn.checked){
+            visibleSection.style.display = "none";
+            processingSection.style.display = "block";
+            setTimeout(() => {
+                processingSection.style.display = "none";
+                doneSection.style.display = "block";
+            }, 2000);
+       }
+    }
+    else{
+        window.location = "./directClaim3.html";
+    }
+    // console.log(formData.get('checkbox'));
+   
     
 });
 

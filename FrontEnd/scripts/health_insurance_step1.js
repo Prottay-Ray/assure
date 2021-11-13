@@ -181,16 +181,6 @@ document.getElementById("btn_1").addEventListener('click', () =>{
         document.getElementById("atleast").style.visibility = "visible";
     }
     else{   
-        // fetch("http://localhost:8070/user/authenticate", {
-        //     method:"POST",
-        //     body: mem,
-        //     mode: 'cors',
-        //     headers:{
-        //         "Content-Type":"application/json; charset=UTF-8"
-        //     },
-        // })
-        // .then(res)
-    
         window.location = "health_insurance_step2.html"
     }
 })
