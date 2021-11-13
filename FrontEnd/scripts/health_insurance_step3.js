@@ -1,3 +1,20 @@
+let temp = localStorage.getItem("members");
+
+fetch("http://localhost:8070/explore/policies", {
+    method:"POST",
+    body: temp,
+    mode: 'cors',
+    headers:{
+        "Content-Type":"application/json; charset=UTF-8"
+    },
+})
+.then((res) =>{
+    return res.json();
+})
+.then((data) =>{
+    localStorage.setItem("policyList",JSON.stringify(data));
+})
+
 localStorage.setItem("userDetails", JSON.stringify({}));
 
 document.getElementById("btn_3").addEventListener('click', () =>{
