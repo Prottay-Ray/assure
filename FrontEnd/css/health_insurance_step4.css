@@ -41,21 +41,19 @@
     visibility: hidden;
 }
 
-.select_box{
+.input_box{
     border: 1px solid #7B7E84;
     box-sizing: border-box;
     border-radius: 8px;
 }
 
-.select_text{
+.input_text{
     font-family: Palanquin;
     font-style: normal;
-    font-weight: normal;
-    font-size: 14px;
-    line-height: 25px;
-    display: flex;
-    align-items: center;
-    color: #7B8384;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 20px;
+    color: #063035;
 }
 
 /* specific properties */
@@ -106,129 +104,50 @@ body{
     text-align: center;
 }
 
-#for_whom{
-    width: 179px;
-    height: 40px;
+/*live*/
+
+#medi{
+    position: absolute;
+    width: 403px;
+    height: 20px;
     left: 16px;
     top: 96px;
-    font-weight: 500;
-    font-size: 16px;
-    line-height: 20px;
-    color: #063035
 }
 
-/* options */
-
-#self{
+#input_medi_1{
     position: absolute;
     width: 343px;
     height: 40px;
     left: 16px;
-    top: 152px;
+    top: 132px;
+    padding: 20px;
 }
 
-#self_text{
+#input_medi_2{
     position: absolute;
-    width: 23px;
+    width: 343px;
+    height: 40px;
+    left: 16px;
+    top: 192px;
+    padding: 20px;
+}
+
+.yes_no{
+    position: absolute;
+    width: 22px;
     height: 25px;
     left: 31px;
     top: 7px;
 }
 
-#spouse{
-    position: absolute;
-    width: 343px;
-    height: 40px;
-    left: 16px;
-    top: 200px;
-}
-
-#spouse_text{
-    position: absolute;
-    width: 45px;
-    height: 25px;
-    left: 31px;
-    top: 7px;
-}
-
-#son{
-    position: absolute;
-    width: 343px;
-    height: 40px;
-    left: 16px;
-    top: 248px;
-}
-
-#son_text{
-    position: absolute;
-    width: 23px;
-    height: 25px;
-    left: 31px;
-    top: 7px;
-}
-
-#daughter{
-    position: absolute;
-    width: 343px;
-    height: 40px;
-    left: 16px;
-    top: 296px;
-}
-
-#daughter_text{
-    position: absolute;
-    width: 57px;
-    height: 25px;
-    left: 31px;
-    top: 7px;
-}
-
-#father{
-    position: absolute;
-    width: 343px;
-    height: 40px;
-    left: 16px;
-    top: 344px;
-}
-
-#father_text{
-    position: absolute;
-    width: 39px;
-    height: 25px;
-    left: 31px;
-    top: 7px;
-}
-
-#mother{
-    position: absolute;
-    width: 343px;
-    height: 40px;
-    left: 16px;
-    top: 392px;
-}
-
-#mother_text{
-    position: absolute;
-    width: 43px;
-    height: 25px;
-    left: 31px;
-    top: 7px;
-}
-
-
-
-
-
-
-
-/* continue button and policy*/
+/* btn */
 
 .b{
     position: absolute;
     width: 343px;
     height: 48px;
     left: 16px;
-    top: 506px;
+    top: 586px;
     background: #118592;
     border-radius: 8px;
     cursor: pointer;
@@ -254,7 +173,7 @@ body{
     width: 179px;
     height: 32px;
     left: 98px;
-    top: 570px;
+    top: 650px;
     font-family: Palanquin;
     font-style: normal;
     font-weight: normal;
@@ -263,6 +182,7 @@ body{
     text-align: center;
     color: #7B8384;
 }
+
 
 .pri{
     color: #118592;

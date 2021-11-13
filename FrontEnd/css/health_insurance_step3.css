@@ -1,0 +1,212 @@
+/* common properties */
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+::placeholder{
+    color: #7B8384;
+}
+
+.font_family{
+    font-family: Palanquin;
+}
+
+.font_style{
+    font-style: normal;
+}
+
+.font_weight_1{
+    font-weight: 500;
+}
+
+.font_color_1{
+    color: #118592;
+}
+
+.font_color_2{
+    color: #FFFFFF;
+}
+
+.backgroung_color_1{
+    background: #118592;
+}
+
+.position{
+    position: absolute;
+}
+
+.visible{
+    visibility: hidden;
+}
+
+.input_box{
+    border: 1px solid #7B7E84;
+    box-sizing: border-box;
+    border-radius: 8px;
+}
+
+.input_box:focus{
+    outline: none;
+    border-color: #118592;
+}
+
+.input_text{
+    font-family: Palanquin;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 20px;
+    color: #063035;
+}
+
+/* specific properties */
+
+body{
+    background-color: rgb(36, 36, 36);
+    border-radius: 20px;
+}
+
+.main_container{
+    position: relative;
+    width: 375px;
+    height: 812px;
+    background-color: #FFFFFF;
+    border-radius: 20px;
+    border: 1px solid black;
+}
+
+/*top bar*/
+
+#hospital_top_bar{
+    width: 375px;
+    height: 72px;
+    left: 0%;
+    right: 0%;
+    top: 0%;
+    bottom: 0%;
+    background: #118592;
+    border-radius: 20px 20px 0px 0px;
+}
+
+#back_btn{
+    position: absolute;
+    left: 8%;
+    right: 5%;
+    top: 65%;
+    bottom: -15%;
+}
+
+#health_header{
+    left: 33.6%;
+    right: 33.87%;
+    top: 48.61%;
+    bottom: 11.11%;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 29px;
+    text-align: center;
+}
+
+/*live*/
+
+#live{
+    position: absolute;
+    width: 133px;
+    height: 20px;
+    left: 16px;
+    top: 96px;
+}
+
+#input_live{
+    position: absolute;
+    width: 343px;
+    height: 40px;
+    left: 16px;
+    top: 132px;
+    padding: 20px;
+}
+
+
+/* btn */
+
+.b{
+    position: absolute;
+    width: 343px;
+    height: 48px;
+    left: 16px;
+    top: 586px;
+    background: #118592;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.cont{
+    position: absolute;
+    width: 57px;
+    height: 25px;
+    left: 143px;
+    top: 12px;
+    font-family: Palanquin;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 25px;
+    text-align: center;
+    color: #FFFFFF;
+}
+
+.policy{
+    position: absolute;
+    width: 179px;
+    height: 32px;
+    left: 98px;
+    top: 650px;
+    font-family: Palanquin;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 10px;
+    line-height: 16px;
+    text-align: center;
+    color: #7B8384;
+}
+
+
+.pri{
+    color: #118592;
+    text-decoration: underline;
+}
+button {
+    cursor: pointer;
+}
+.navIcon {
+    height: 72px;
+    width: 72px;
+    background-color: transparent;
+    border: none;
+    outline: none;
+}
+.navIcon:hover {
+    border-top: 4px solid #60d1dd;
+}
+#exploreIcon, #exploreIcon:hover {
+    border-top: 4px solid #118592;
+}
+#bottomNavbar {
+    position: sticky;
+    top: 85%;
+    display: flex;
+    justify-content: space-between;
+    background-color: white;
+    border-radius: 0px 0px 20px 20px;
+}
+.navIcon > p {
+    font-weight: 600;
+    font-size: 10px;
+    line-height: 18px;
+    color: #118592;
+}
+#moreIcon > p {
+    margin-top: 6px;
+}
