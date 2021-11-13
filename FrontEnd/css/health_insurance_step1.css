@@ -215,11 +215,19 @@ body{
     top: 7px;
 }
 
-
-
-
-
-
+#atleast{
+    position: absolute;
+    width: 200px;
+    height: 14px;
+    left: 130px;
+    top: 480px;
+    font-family: Palanquin;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 11px;
+    line-height: 14px;
+    color: #F41414;
+}
 
 /* continue button and policy*/
 
