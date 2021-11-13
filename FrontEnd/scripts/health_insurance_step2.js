@@ -154,6 +154,7 @@ document.getElementById("btn_2").addEventListener('click', () =>{
     .then((data) =>{
         console.log(data);
         localStorage.setItem("policyList",JSON.stringify(data));
+        alert('happening')
     })
 
     window.location = "health_insurance_step3.html"

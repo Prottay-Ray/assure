@@ -30,6 +30,6 @@ input_medi_2.addEventListener('click', () =>{
     localStorage.setItem("userDetails", JSON.stringify(user_d));
 })
 
-// document.getElementById("btn_4").addEventListener('click', () =>{
-//     window.location = "health_insurance_step4.html"
-// }
+document.getElementById("btn_4").addEventListener('click', () =>{
+    window.location = "catalog.html"
+});
