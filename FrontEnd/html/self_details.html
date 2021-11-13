@@ -203,10 +203,10 @@
         </div>
     </div>
 
-    <div class="entry">
+    <!-- <div class="entry">
         <div>City</div>
         <div><input type="text" id="city"></div>
-    </div>
+    </div> -->
 
     <div class="entry">
         <div>DOB</div>
@@ -223,7 +223,7 @@
         </div>
     </div>
 
-    <div class="entry">
+    <!-- <div class="entry">
         <div>Taking medications?</div>
         <div>
             <select name="medicine" id="medicine">
@@ -231,7 +231,7 @@
                     <option value="false">False</option>
             </select>
         </div>
-    </div>
+    </div> -->
 
     <div class="entry">
         <div>Email</div>
@@ -273,14 +273,14 @@
 </html>
 <script>
     function gotoMemberDetails(){
-            let allDetails = []; 
+            let allDetails = JSON.parse(localStorage.getItem("allDetails")); 
             let person = {
                 "name" : document.getElementById("name").value,
                 "relation_with_user" : "self",
                 "dob" : document.getElementById("DOB").value,
                 "gender" : document.getElementById("gender").value,
-                "is_taking_medicines" : document.getElementById("medicine").value,
-                "city" : document.getElementById("city").value,
+                "is_taking_medicines" : allDetails[0].is_taking_medicines,
+                "city" : allDetails[0].city,
                 "martial_status" : document.getElementById("married").value,
                 "email" : document.getElementById("email").value,
                 "aadhaar" : document.getElementById("aadhar").value,

@@ -1,9 +1,8 @@
-localStorage.setItem("userDetails", JSON.stringify({}));
+
 
 document.getElementById("btn_3").addEventListener('click', () =>{
     let age = JSON.parse(localStorage.getItem("members"));
 
-    let user_d = JSON.parse(localStorage.getItem("userDetails"));
 
     Object.assign(user_d,{"userAge" : age.ageOfSelf});
 
@@ -11,7 +10,9 @@ document.getElementById("btn_3").addEventListener('click', () =>{
 
     Object.assign(user_d, {"is_taking_medicines" : null});
 
-    localStorage.setItem("userDetails", JSON.stringify(user_d));
 
+    localStorage.setItem("city", JSON.stringify(document.getElementById("input_live").value));
+    
+    
     window.location = "health_insurance_step4.html"
 })

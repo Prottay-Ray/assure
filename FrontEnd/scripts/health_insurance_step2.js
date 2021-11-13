@@ -113,14 +113,13 @@ document.getElementById("btn_2").addEventListener('click', () =>{
     let father_d = document.getElementById("father_d");
     let mother_d = document.getElementById("mother_d");
 
-    let user = new Object();
-    user.age = document.getElementById("self_d").value;
-    allDetails.push(user);
+    
+    let self_age = document.getElementById("self_d").value;
+    localStorage.setItem("self_age", JSON.stringify(self_age));
 
-    let spouse = new Object();
-    spouse.age = document.getElementById("spouse_d").value;
-    allDetails.push(spouse);
-    localStorage.setItem("allDetails", JSON.stringify(allDetails));
+    
+    let spouse_age = document.getElementById("spouse_d").value;
+    localStorage.setItem("spouse_age", JSON.stringify(spouse_age));
 
 
     if(self_d.value != null){
