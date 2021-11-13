@@ -3,6 +3,8 @@ let step = document.getElementById("step_2");
 
 let mem = JSON.parse(localStorage.getItem("members"));
 
+let allDetails = [];
+    
 for(const keys in mem){
     if(keys == "ageOfSelf"){
         let span1 = document.createElement("span");
@@ -18,6 +20,7 @@ for(const keys in mem){
         self_div.setAttribute("class","input_box");
         self_div.setAttribute("id","self_d");
         step.appendChild(self_div);
+        
     }
     if(keys == "ageOfSpouse"){
         let span1 = document.createElement("span");
@@ -109,6 +112,15 @@ document.getElementById("btn_2").addEventListener('click', () =>{
     let daughter_d = document.getElementById("daughter_d");
     let father_d = document.getElementById("father_d");
     let mother_d = document.getElementById("mother_d");
+
+    let user = new Object();
+    user.age = document.getElementById("self_d").value;
+    allDetails.push(user);
+
+    let spouse = new Object();
+    spouse.age = document.getElementById("spouse_d").value;
+    allDetails.push(spouse);
+    localStorage.setItem("allDetails", JSON.stringify(allDetails));
 
 
     if(self_d.value != null){
