@@ -289,13 +289,14 @@
 
 <script>
     function nextPage(){
+        let allDetails = JSON.parse(window.localStorage.getItem("allDetails"));
         let person = {
             "name" : document.getElementById("name").value,
             "relation_with_user" : document.getElementById("relation").value,
             "dob" : document.getElementById("DOB").value,
             "gender" : document.getElementById("gender").value,
             "is_taking_medicines" : document.getElementById("medicine").value,
-            "city" : document.getElementById("city").value,
+            "city" : allDetails[0].city,
             "martial_status" : document.getElementById("married").value,
             "email" : document.getElementById("email").value,
             "aadhaar" : document.getElementById("aadhar").value,
@@ -304,7 +305,7 @@
             "height" : document.getElementById("height").value,
             "weight" : document.getElementById("weight").value
         }
-        let allDetails = JSON.parse(window.localStorage.getItem("allDetails"));
+        
         allDetails.push(person);
         window.localStorage.setItem("allDetails", JSON.stringify(allDetails));
 
