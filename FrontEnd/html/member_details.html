@@ -308,13 +308,13 @@
         let memberCount = JSON.parse(localStorage.getItem("memberCount"));
         memberCount = memberCount - 1;
         window.localStorage.setItem("memberCount", JSON.stringify(memberCount));
-        if(memberCount===0){
-            window.location.href = "./review.html"    
-        }
-        else{
-            window.location.href = "./member_details.html";
-        }
+        // if(memberCount===0){
+        //     window.location.href = "./review.html"    
+        // }
+        // else{
+        //     window.location.href = "./member_details.html";
+        // }
         
-
+        window.location.href = "./review.html" 
     }
 </script>
