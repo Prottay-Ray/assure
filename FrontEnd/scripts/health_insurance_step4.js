@@ -2,6 +2,8 @@ let input_medi_1 = document.getElementById("input_medi_1");
 
 let input_medi_2 = document.getElementById("input_medi_2");
 
+
+
 input_medi_1.addEventListener('click', () =>{
     let user_d = JSON.parse(localStorage.getItem("userDetails"));
 
@@ -14,6 +16,8 @@ input_medi_1.addEventListener('click', () =>{
     Object.assign(user_d,{"is_taking_medicines" : true});
 
     localStorage.setItem("userDetails", JSON.stringify(user_d));
+
+    localStorage.setItem("medicine", JSON.stringify(true));
 })
 
 input_medi_2.addEventListener('click', () =>{
@@ -28,6 +32,8 @@ input_medi_2.addEventListener('click', () =>{
     Object.assign(user_d,{"is_taking_medicines" : false});
 
     localStorage.setItem("userDetails", JSON.stringify(user_d));
+
+    localStorage.setItem("medicine", JSON.stringify(false));
 })
 
 document.getElementById("btn_4").addEventListener('click', () =>{

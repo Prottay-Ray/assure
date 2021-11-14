@@ -13,7 +13,7 @@
 
 <body>
     <div id="container_main">
-        <h2 id="user_name_text">Hello name</h2>
+        <h2 id="user_name_text">Hello Mukul</h2>
         <p id="user_greetings_text">It's good to see you back</p>
     
     <div id="scrolling">
@@ -24,7 +24,7 @@
 </div>
     <h3 id="heading_product">Select a product</h3>
     <div id="icon_cont" style="top:400px">
-       <a href="./health_insurance.html"> <img id="icon_health_insurace" src="../icons/Property 1=Health Insurance.svg" alt="icon_health_insurace"></a>
+       <a href="./health_insurance_step1.html"> <img id="icon_health_insurace" src="../icons/Property 1=Health Insurance.svg" alt="icon_health_insurace"></a>
         <img src="../icons/Property 1=Term insurance.svg" alt="icon_term_insurance" id="term_insurance_icon">
         <img src="../icons/Component 48.svg" alt="icon_car_insurance" id="car_insurance_icon">
         <img src="../icons/Property 1=Bike insurance.svg" alt="icon_bike_insurance" id="bike_insurance_icon">
@@ -48,3 +48,12 @@
 </body>
 
 </html>
+<script type="module">
+    import {bottomNavbar, loadNavbar} from "../components/bottomNavbar.js";
+    let div = document.createElement('div');
+    div.innerHTML = bottomNavbar();
+    div.style.marginTop = "120%";
+    document.body.appendChild(div);
+
+    loadNavbar();
+</script>

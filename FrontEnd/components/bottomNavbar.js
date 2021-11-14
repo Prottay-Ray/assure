@@ -49,7 +49,7 @@ function loadNavbar() {
         window.location = "./home_navigation.htm";
     }
     exploreIcon.onclick = () => {
-        window.location = "./health_insurance_step_1.html";
+        window.location = "Explore2.html";
     }
     profileIcon.onclick = () => {
         window.location = "./profile.htm";
