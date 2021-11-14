@@ -5,15 +5,11 @@ if(selected_claim.selected=="Call & Claim"){
     document.getElementById("call_icon").classList.remove('d-none');
 
 
-
-    
-
-
 }
 
 let policies = 0;
 let policyNameSet = [];
-let userId = JSON.parse(localStorage.getItem("UserID"));
+let userId = 1;//JSON.parse(localStorage.getItem("UserID"));
 let selectPolicy = document.getElementById('select_policy')
 let selectLocation = document.getElementById('select_location')
 let selectHospital = document.getElementById('select_hospital')
@@ -63,7 +59,6 @@ selectLocation.onchange = () => {
 
 next.onclick = () => {
     let a = {
-        // userId: 
         location: selectLocation.value,
         hospital: selectHospital.value
     }
@@ -73,7 +68,7 @@ next.onclick = () => {
             break;
         }
     }
-    localStorage.setItem('HospitalClaim', JSON.stringify(a));
+    localStorage.setItem('claim_details', JSON.stringify(a));
 }
 window.onload = populate();
 
