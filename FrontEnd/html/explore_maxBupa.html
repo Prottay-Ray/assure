@@ -3,7 +3,10 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Palanquin:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="../icons/site_logo.svg" type="image/x-icon">
     <title>Policy Details</title>
     <style>
         *{
@@ -303,21 +306,21 @@
     <div id="footer">
         <div>
             <div>Total Premium</div>
-            <div id="finalPremium">Rs. 8,700/-</div>
+            <div id="finalPremium">Rs. /-</div>
         </div>
         <div id="continue" onclick="nextPage()">Continue</div>
     </div>
 </body>
 </html>
 <script>
-    function calculatePremium(){
-        let amount = document.getElementById("amount").value;
-        let year = document.getElementById("year").value;
+    // function calculatePremium(){
+    //     let amount = document.getElementById("amount").value;
+    //     let year = document.getElementById("year").value;
 
-        let thatDiv = document.getElementById("finalPremium");
-        thatDiv.innerText = "Rs. " + amount*year;
-        console.log(year, amount);
-    }
+    //     let thatDiv = document.getElementById("finalPremium");
+    //     thatDiv.innerText = "Rs. " + amount*year;
+    //     console.log(year, amount);
+    // }
     function nextPage(){
         continueButton();
         window.location.href = "./self_details.html";
@@ -327,32 +330,36 @@
     let year = document.getElementById('year');
     let amount = document.getElementById('amount');
     let finalAmount = document.getElementById('finalPremium');
-    var premiumChosen = 0;
+    let premiumChosen = 0;
+
+    finalAmount.innerText = `Rs. ${Number(policy.premium1)}/-`;
 
     function continueButton() {
         let a = {
             tenure: year.value,
             cover: amount.value,
-            premium: premiumChosen
+            premium: premiumChosen,
+            policyName: policy.policyName
         }
         localStorage.setItem("ChosenTA", JSON.stringify(a));
     }
 
-    amount.onselectchange = () => {
+    amount.onchange = () => {
         // finalAmount.innerText = "Rs. " + 50000;
         // return;
-        if (amount.value === "Rs. " + policy.coverAmount1) {
-            finalAmount.innerText = `Rs. ${policy.premium1}/-`;
+        if (amount.value === ("Rs. " + policy.coverAmount1)) {
+            finalAmount.innerText = `Rs. ${Number(policy.premium1)}/-`;
+            // alert(policy.premium1);
             premiumChosen = policy.premium1;
-            console.log()
             return;
         }
-        if (amount.value === "Rs. " + policy.coverAmount2) {
+        if (amount.value === ("Rs. " + policy.coverAmount2)) {
             finalAmount.innerText = `Rs. ${policy.premium2}/-`;
             premiumChosen = policy.premium2;
             return;
         }
-        if (amount.value === "Rs. " + policy.coverAmount3) {
+        if (amount.value === ("Rs. " + policy.coverAmount3)) {
+            // alert('Hare Krishna')
             finalAmount.innerText = `Rs. ${policy.premium3}/-`;
             premiumChosen = policy.premium3;
             return;
@@ -363,16 +370,16 @@
     function loadActivity() {
         document.getElementById('policyName1').innerText = policy.policyName;
         let a = document.createElement('option');
-        a.value = policy.tenure1 + " years.";
-        a.text = policy.tenure1 + " years.";
+        a.value = policy.tenure1 + " years";
+        a.text = policy.tenure1 + " years";
         year.appendChild(a);
         a = document.createElement('option');
-        a.value = policy.tenure2 + " years.";
-        a.text = policy.tenure2 + " years.";
+        a.value = policy.tenure2 + " years";
+        a.text = policy.tenure2 + " years";
         year.appendChild(a);
         a = document.createElement('option');
-        a.value = policy.tenure3 + " years.";
-        a.text = policy.tenure3 + " years.";
+        a.value = policy.tenure3 + " years";
+        a.text = policy.tenure3 + " years";
         year.appendChild(a);
         a = document.createElement('option');
         a.setAttribute('id', '1');

@@ -28,7 +28,7 @@ public class PolicyBookingsGetListDTO {
     private Boolean isMaternityCovered;
     private Boolean isRestorationBenefitsCovered;
 
-    List<ProfileMemberDTO> members = new ArrayList<>();
+    List<ProfileMemberDTO> members = new LinkedList<>();
 
     public void addMember(ProfileMemberDTO memberDTO) {
         members.add(memberDTO);

@@ -2,14 +2,13 @@ let policyList = JSON.parse(localStorage.getItem('policyList'));
 
 let cardStore = document.getElementById('bookings');
 function loadInsurances() {
-    var i = -1;
-    for (let {premium1, policyName, coverAmount1} of policyList) {
 
-        i++;
+    for (let el of policyList) {
+
         let div = document.createElement('div');
         div.innerHTML = `<div class="bookingCard">
         <p class="policyName">
-            ${policyName}
+            ${el.policyName}
         </p>
         <p class="product_title">
             Product
@@ -23,7 +22,7 @@ function loadInsurances() {
                     Cover
                 </p>
                 <p class="cover_amount">
-                    Rs. ${coverAmount1}
+                    Rs. ${el.coverAmount1}
                 </p>
             </span>
             <span class="left_valid">
@@ -31,7 +30,7 @@ function loadInsurances() {
                     Premium/month
                 </p>
                 <p class="valid_thru">
-                    Rs. ${premium1}
+                    Rs. ${el.premium1}
                 </p>
             </span>
         </div>
@@ -45,7 +44,7 @@ function loadInsurances() {
 
     
     div.onclick = () => {
-        localStorage.setItem("PolicySelected", JSON.stringify(policyList[i]));
+        localStorage.setItem("PolicySelected", JSON.stringify(el));
         window.location = "explore_maxBupa.html";
     }
         

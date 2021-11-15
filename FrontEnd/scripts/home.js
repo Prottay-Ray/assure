@@ -24,27 +24,39 @@ claimButt.onclick = () => {
 async function loadUser() {
     
     // userId = 2;
-    let a  = await fetch(`http://localhost:8070/claim/${userId}`);
+    let a  = await fetch(`http://localhost:8070/booking/latest/${userId}`);
     let b = await a.json();
     localStorage.setItem("Claim", JSON.stringify(b));
-    b = b[0];
-    if (b.id !== null) {
+    // b = b[0];
+    userName.innerText = "Hello " + b.userName + "!";
+    if (b.isClaimThere === true) {
 
         claim_card.style.display = "none";
-        claimCard.style.display = "block";
-        userName.innerText = "Hello " + b.userName + "!";
+        claimCard.style.display = "block";   
         claimId.innerText = b.id;
         claimSubmitDate.innerText = b.submissionDate.substring(0, 10);
         benefitItem.innerText = b.claimItem;
         claimStatus.innerText = b.status;
-        policy.innerText = b.policyBookingName;
+        policy.innerText = b.policyName;
+        membership_title.innerText = "Membership No.";
+        membership_no.innerText = b.memberId;
+
+    }
+    else if (b.isBookingThere === true) {
+        document.getElementById('policyCard').innerText = "Latest Booking"
+        document.getElementById('valid_title1').innerText = "Valid till"
+        document.getElementById('cover_title1').innerText = 'Cover Amount'
+        document.getElementById('clm_status').innerText = "Covers"
+        claim_card.style.display = "none";
+        claimCard.style.display = "block";   
+        claimId.innerText = b.bookingId;
+        claimSubmitDate.innerText = b.validTillDate.substring(0, 10);
+        benefitItem.innerText = "Rs." + b.coverAmount;
+        claimStatus.innerText = " " + b.memberCount + " Members";
+        policy.innerText = b.policyName;
         membership_title.innerText = "Membership No.";
         membership_no.innerText = b.memberId;
     }
-    // else {
-    //     let 
-    // }
 }
-
-window.onload = loadUser();
+loadUser();
 

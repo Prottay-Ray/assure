@@ -200,9 +200,9 @@
         <div>Gender</div>
         <div>
             <select name="gender" id="gender">
-                    <option value="5">Female</option>
-                    <option value="5.5">Male</option>
-                    <option value="6">Transgender</option>
+                    <option value="female">Female</option>
+                    <option value="male">Male</option>
+                    <option value="transgender">Transgender</option>
             </select>
         </div>
     </div>
@@ -275,7 +275,7 @@
     <div id="footer">
         <div>
             <div>Total Premium</div>
-            <div id="finalPremium">Rs. 8,700/-</div>
+            <div id="finalPremium">Rs. /-</div>
         </div>
         <div onclick="nextPage()">Continue</div>
     </div>
@@ -284,6 +284,11 @@
 </html>
 
 <script>
+
+    let det = JSON.parse(localStorage.getItem('ChosenTA'));
+    document.getElementById('finalPremium').innerText = `Rs. ${det.premium}/-`;
+    document.getElementById('policyName').innerText = det.policyName;
+
     function nextPage(){
         let allDetails = JSON.parse(window.localStorage.getItem("allDetails"));
         let person = {

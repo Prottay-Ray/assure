@@ -1,9 +1,6 @@
 package com.constructWeek3.assure.service;
 
-import com.constructWeek3.assure.dto.HospitalLocationDTO;
-import com.constructWeek3.assure.dto.MembersDTO;
-import com.constructWeek3.assure.dto.PolicyBookingInputDTO;
-import com.constructWeek3.assure.dto.PolicyBookingsGetListDTO;
+import com.constructWeek3.assure.dto.*;
 import com.constructWeek3.assure.entity.*;
 import com.constructWeek3.assure.exception.*;
 import com.constructWeek3.assure.repository.*;
@@ -33,6 +30,9 @@ public class PolicyBookingsService {
 
     @Autowired
     private MembersRepository membersRepository;
+
+    @Autowired
+    private ClaimService claimService;
 
     @Autowired
     private PolicyService policyService;
@@ -177,7 +177,6 @@ public class PolicyBookingsService {
 
         modelMapper.getConfiguration()
                 .setMatchingStrategy(MatchingStrategies.LOOSE);
-
         List<PolicyBookingsGetListDTO> list = modelMapper.map(policyBookings, new TypeToken<List<PolicyBookingsGetListDTO>>() {}.getType());
         for (PolicyBookingsGetListDTO policy :
                 list) {
@@ -190,6 +189,7 @@ public class PolicyBookingsService {
             policy.setValidTillDate(c.getTime());
 
         }
+        Collections.reverse(list);
         return list;
     }
 
@@ -229,6 +229,41 @@ public class PolicyBookingsService {
         }
 
         return list;
+
+    }
+
+    public LatestClaimDTO fetchLatest(Long userId) {
+
+        Optional<User> user = userRepository.findById(userId);
+        if (user.isEmpty()) throw new UserDoesNotExistException("User does not exist!");
+
+        List<Claim> claims = claimService.getAllTheClaims(userId);
+
+        LatestClaimDTO latestClaimDTO = new LatestClaimDTO();
+        latestClaimDTO.setUserName(user.get().getUserName());
+        latestClaimDTO.setIsBookingThere(Boolean.FALSE);
+        latestClaimDTO.setIsClaimThere(Boolean.FALSE);
+
+        if (claims.isEmpty()) {
+
+            List<PolicyBookingsGetListDTO> policyBookings = getBookedPolicies(userId);
+            if (policyBookings.isEmpty()) {
+                return latestClaimDTO;
+            }
+            PolicyBookingsGetListDTO policyBooking = policyBookings.get(0);
+            modelMapper.map(policyBooking, latestClaimDTO);
+            latestClaimDTO.setIsBookingThere(Boolean.TRUE);
+            latestClaimDTO.setIsClaimThere(Boolean.FALSE);
+            latestClaimDTO.setMemberId(policyBooking.getMembers().get(0).getMember_id());
+            latestClaimDTO.setMemberCount(policyBooking.getMembers().size());
+            return latestClaimDTO;
+
+        }
+        Claim claim = claims.get(0);
+        modelMapper.map(claim, latestClaimDTO);
+        latestClaimDTO.setIsClaimThere(Boolean.TRUE);
+        latestClaimDTO.setMemberId(claim.getMember().getMember_id());
+        return latestClaimDTO;
 
     }
 }

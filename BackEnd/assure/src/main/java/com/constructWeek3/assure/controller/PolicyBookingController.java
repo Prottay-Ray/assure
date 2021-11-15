@@ -1,9 +1,6 @@
 package com.constructWeek3.assure.controller;
 
-import com.constructWeek3.assure.dto.HospitalLocationDTO;
-import com.constructWeek3.assure.dto.MembersDTO;
-import com.constructWeek3.assure.dto.PolicyBookingInputDTO;
-import com.constructWeek3.assure.dto.PolicyBookingsGetListDTO;
+import com.constructWeek3.assure.dto.*;
 import com.constructWeek3.assure.service.PolicyBookingsService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -44,4 +41,11 @@ public class PolicyBookingController {
     public ResponseEntity<List<HospitalLocationDTO>> fetchHospitals(@PathVariable Long userId) {
         return new ResponseEntity<>(policyBookingsService.fetchHospitals(userId), HttpStatus.FOUND);
     }
+
+    @GetMapping("/booking/latest/{userId}")
+    public ResponseEntity<LatestClaimDTO> fetchLatest(@PathVariable Long userId) {
+        return new ResponseEntity<>(policyBookingsService.fetchLatest(userId), HttpStatus.FOUND);
+    }
+
+
 }
