@@ -67,7 +67,7 @@ log_btn.addEventListener('click', async(e) =>{
                 else if(r.message == "Enter pass"){
                     pass_symb.style.visibility = "visible";
                     pass_error.style.visibility = "visible";
-                    pass_error.innerText = "Enter pass";
+                    pass_error.innerText = "Enter password";
                 }
                 else if(r.message == "Password should be more that 4 characters"){
                     pass_symb.style.visibility = "visible";
