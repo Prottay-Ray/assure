@@ -161,13 +161,13 @@ body{
     width: 200px;
     height: 14px;
     left: 15%;
-    top: 44%;
+    top: 42.5%;
 }
 
 #name_symb{
     position: absolute;
     left: 76%;
-    top: 41%;
+    top: 40%;
 }
 
 #email_input{
@@ -179,13 +179,13 @@ body{
     width: 200px;
     height: 14px;
     left: 15%;
-    top: 51%;
+    top: 49.5%;
 }
 
 #email_symb{
     position: absolute;
     left: 76%;
-    top: 48%;
+    top: 47%;
 }
 
 #mob_input{
@@ -197,13 +197,13 @@ body{
     width: 200px;
     height: 14px;
     left: 15%;
-    top: 58%;
+    top: 56%;
 }
 
 #mobile_symb{
     position: absolute;
     left: 76%;
-    top: 55%;
+    top: 53.5%;
 }
 
 #pass_input{
@@ -215,13 +215,13 @@ body{
     width: 250px;
     height: 14px;
     left: 15%;
-    top: 65%;
+    top: 63%;
 }
 
 #pass_symb{
     position: absolute;
     left: 76%;
-    top: 62%;
+    top: 60.5%;
 }
 
 #confirm_pass_input{
@@ -233,13 +233,13 @@ body{
     width: 250px;
     height: 14px;
     left: 15%;
-    top: 72%;
+    top: 70%;
 }
 
 #confirm_symb{
     position: absolute;
     left: 76%;
-    top: 69%;
+    top: 67%;
 }
 
 .error{
