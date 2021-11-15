@@ -81,6 +81,39 @@ cardButtton.addEventListener('click', (e) => {
 
 });
 
+let paybutton = document.getElementById('paybutton');
+
+let allDetails = JSON.parse(localStorage.getItem('allDetails'));
+let det = JSON.parse(localStorage.getItem('ChosenTA'));
+paybutton.innerText = "Pay Rs. " + det.premium;
+
+let userId = JSON.parse(localStorage.getItem("UserID"));
+
+let obj = {
+    coverAmount : det.cover,
+    premium : det.premium,
+    coverTenure : det.tenure,
+    members : allDetails
+}
+
+paybutton.onclick = () => {
+    fetch(`http://localhost:8070/bookings/${userId}`, {
+        method:"POST",
+        body: obj,
+        mode: 'cors',
+        headers:{
+            "Content-Type":"application/json; charset=UTF-8"
+        },
+    })
+    .then((res) => {
+        if(res.status == 302){
+             res.json().then((r) => {
+                 console.log("success")
+             })
+        }
+    })
+}
+
 successButton.addEventListener('click', () => {
     window.location = "./home_navigation.htm";
 });

@@ -1,4 +1,4 @@
-localStorage.setItem("UserID", JSON.stringify(1));
+// localStorage.setItem("UserID", JSON.stringify(1));
 let userId = JSON.parse(localStorage.getItem("UserID"));
 
 let userName = document.getElementById('helloUser');
@@ -26,7 +26,7 @@ async function loadUser() {
     // userId = 2;
     let a  = await fetch(`http://localhost:8070/booking/latest/${userId}`);
     let b = await a.json();
-    localStorage.setItem("Claim", JSON.stringify(b));
+    localStorage.setItem("userName", JSON.stringify(b.userName));
     // b = b[0];
     userName.innerText = "Hello " + b.userName + "!";
     if (b.isClaimThere === true) {

@@ -274,7 +274,7 @@
         <div>
            <div id="backButton"><</div>
         </div>
-        <div id="policyName">Max Bupa</div>
+        <div id="policyName">Review</div>
     </div>
     <div id = stepNumber>
         <img src="../icons/Component_review_pay.svg">
@@ -286,17 +286,17 @@
     <div id="static2">Review your information provided.</div>
 
     <div id="block">
-        <div>Plan for Mukul</div>
+        <div id="userName">Plan for Mukul</div>
         <div>Product</div>
         <div>Health Insurance</div>
         <div id="flex_f">
             <div>
                 <div>Cover</div>
-                <div>Rs. 5 Lakh</div>
+                <div id="coverit">Rs. 5 Lakh</div>
             </div>
             <div>
                 <div>Premium</div>
-                <div>₹ 8700</div>
+                <div id="covprem">₹ 8700</div>
             </div>
         </div>
         <hr>
@@ -309,15 +309,40 @@
     <div id="block2">
         <div>Personal Details</div>
         <div id="smaller">Full Name</div>
-        <div id="bigger">Mukul</div>
+        <div id="bigger">
+            <!-- Mukul -->
+            <span id="nameUser">
+
+            </span>
+        </div>
         <div id="smaller">email</div>
-        <div id="bigger">m@gmail.com</div>
+        <div id="bigger">
+            <!-- m@gmail.com -->
+            <span id="emailUser">
+
+            </span>
+        </div>
         <div id="smaller">Mobile Number</div>
-        <div id="bigger">9876543210</div>
+        <div id="bigger">
+            <!-- 9876543210 -->
+            <span id="mobUser">
+
+            </span>
+        </div>
         <div id="smaller">Occupation</div>
-        <div id="bigger">Backend Engineer</div>
+        <div id="bigger">
+            <!-- Backend Engineer -->
+            <span id="occUser">
+
+            </span>
+        </div>
         <div id="smaller">DOB</div>
-        <div id="bigger">16/06/1997</div>
+        <div id="bigger">
+            <!-- 16/06/1997 -->
+            <span id="dobUser">
+
+            </span>
+        </div>
         <hr>
         <div id="flex_s">
             <div>Edit</div>
@@ -346,6 +371,21 @@
 </html>
 
 <script>
+
+    let det = JSON.parse(localStorage.getItem('ChosenTA'));
+    let allDetails = JSON.parse(localStorage.getItem('allDetails'))[0];
+    document.getElementById('finalPremium').innerText = `Rs. ${det.premium}/-`;
+    // document.getElementById('policyName').innerText = det.policyName;
+    document.getElementById('userName').innerText = "Plan for " + allDetails.name;
+    document.getElementById('nameUser').innerText = allDetails.name;
+    document.getElementById('emailUser').innerText = allDetails.email;
+    document.getElementById('mobUser').innerText = allDetails.mobile;
+    document.getElementById('occUser').innerText = allDetails.occupation;
+    document.getElementById('dobUser').innerText = allDetails.dob;
+    document.getElementById('covprem').innerText = det.premium;
+    document.getElementById('coverit').innerText = det.cover;
+
+    
     function nextPage(){
         window.location.href = "./payment.html"
     }

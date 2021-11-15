@@ -183,6 +183,7 @@
     <div id = stepNumber>
         <img src="../icons/explore_details.svg">
     </div>
+    <form>
     <div id="static1">
         <div>Great!</div>
         <div>Let's fill the details first</div>
@@ -191,7 +192,7 @@
     <div class="entry">
         <div>Name</div>
         <div>
-            <input id="name" type="text">
+            <input required id="name" type="text">
         </div>
     </div>
     <div class="entry">
@@ -207,12 +208,12 @@
 
     <!-- <div class="entry">
         <div>City</div>
-        <div><input type="text" id="city"></div>
+        <div><input required type="text" id="city"></div>
     </div> -->
 
     <div class="entry">
         <div>DOB</div>
-        <div><input type="date" placeholder="dd/mm/yyyy" id="DOB"></div>
+        <div><input required type="date" placeholder="dd/mm/yyyy" id="DOB"></div>
     </div>
 
     <div class="entry">
@@ -237,30 +238,30 @@
 
     <div class="entry">
         <div>Email</div>
-        <div><input type="email" id="email"></div>
+        <div><input required type="email" id="email"></div>
     </div>
 
     <div class="entry">
         <div>Aadhar Number</div>
-        <div><input type="text" id="aadhar" placeholder="1234 1234 1234"> </div>
+        <div><input required type="text" id="aadhar" placeholder="1234 1234 1234"> </div>
     </div>
     <div class="entry">
         <div>Mobile no.</div>
-        <div><input type="tel" id="mobile"></div>
+        <div><input required type="tel" id="mobile"></div>
     </div>
 
     <div class="entry">
         <div>Occupation</div>
-        <div><input type="text" id="occupation"></div>
+        <div><input required type="text" id="occupation"></div>
     </div>
     <div class="entry">
         <div>Weight</div>
-        <div><input type="text" id="weight" placeholder="in Kg."></div>
+        <div><input required type="text" id="weight" placeholder="in Kg."></div>
     </div>
 
     <div class="entry">
         <div>Height</div>
-        <div><input type="text" id="height" placeholder="in ft."></div>
+        <div><input required type="text" id="height" placeholder="in ft."></div>
     </div>
 
     <div id="footer">
@@ -270,10 +271,14 @@
         </div>
         <div onclick="gotoMemberDetails()">Continue</div>
     </div>
-
+</form>
 </body>
 </html>
 <script>
+    let det = JSON.parse(localStorage.getItem('ChosenTA'));
+    document.getElementById('finalPremium').innerText = `Rs. ${det.premium}/-`;
+    document.getElementById('policyName').innerText = "Details";
+
     function gotoMemberDetails(){
             let allDetails = []; 
             let person = {
