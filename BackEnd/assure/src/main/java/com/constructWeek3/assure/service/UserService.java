@@ -40,11 +40,8 @@ public class UserService {
     static Logger logger = LoggerFactory.getLogger(AssureApplication.class);
 
     // Twilio string saved as environment variables are accessed here
-//    public static final String ACCOUNT_SID = System.getenv("TWILIO_ACCOUNT_SID");
-//    public static final String AUTH_TOKEN = System.getenv("TWILIO_AUTH_TOKEN");
-
-    public static final String ACCOUNT_SID = "ACae439ad4f447f658ad2c34999540ff34";
-    public static final String AUTH_TOKEN = "5f4c26a70771353e9d0b8df4aebda8bd";
+    public static final String ACCOUNT_SID = System.getenv("TWILIO_ACCOUNT_SID");
+    public static final String AUTH_TOKEN = System.getenv("TWILIO_AUTH_TOKEN");
 
     // Authenticating the user
     public void authenticateUser(MappingJacksonValue mappingJacksonValue){
