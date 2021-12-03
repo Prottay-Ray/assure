@@ -43,3 +43,27 @@ By clicking on **hospital claim**, the user will be redirected to a page where i
 
 By clicking on **call claim**, the user will be redirected to a page where it make a phone call to the authorized representative, and can submit a call claim request successfully! 
 
+
+## Few Snapshots
+
+![Login Page](https://github.com/meravimane/assure/tree/main/FrontEnd/images/log.PNG)
+
+![Registration Page](https://github.com/meravimane/assure/tree/main/FrontEnd/images/login.PNG)
+
+![Dashboard](https://github.com/meravimane/assure/tree/main/FrontEnd/images/latest.PNG)
+
+![Explore Age Choosing Page](https://github.com/meravimane/assure/tree/main/FrontEnd/images/s2.PNG)
+
+
+## Developed by
+
+
+* Prottay Ray
+* Mukul Howale
+* Shashwat Awasthi
+* Abhinav Gujral
+* Ravi Mane
+
+## UI designed by
+
+* Saman Kumar
